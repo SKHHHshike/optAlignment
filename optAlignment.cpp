@@ -42,16 +42,16 @@ int main()
 
 	//初始化一，初始化生成随机数组 
 	//运行时注释掉初始化二
-	srand((unsigned)time(0));
+	/*srand((unsigned)time(0));
 	m=size1;
 	n=size2;
 	getRandomString1();
-	getRandomString2();
+	getRandomString2();*/
 	//初始化一结束
 
 	//初始化二，自定义的序列 
 	//运行时注释掉初始化一，并在文件a.txt和b.txt中写入待匹配序列
-	/*fstream File;
+	fstream File;
     char c;  
 	//读取a
     File.open("a.txt",ios::in);  
@@ -75,7 +75,6 @@ int main()
 	//计算m和n
 	m=a.size();
 	n=b.size();
-	*/
 	//初始化二结束
 
 	//输出原序列
