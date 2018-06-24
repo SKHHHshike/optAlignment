@@ -1,4 +1,4 @@
-// optAlignment.cpp : ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+// optAlignment.cpp : å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 
 #include "stdafx.h"
@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <fstream>
 
-//Çëm>=n£¬²»Ïë¸ÄÁËorz
+
 #define size1 8
 #define size2 5
 
@@ -40,20 +40,20 @@ struct position
 int main()
 {
 
-	//³õÊ¼»¯Ò»£¬³õÊ¼»¯Éú³ÉËæ»úÊı×é 
-	//ÔËĞĞÊ±×¢ÊÍµô³õÊ¼»¯¶ş
+	//åˆå§‹åŒ–ä¸€ï¼Œåˆå§‹åŒ–ç”Ÿæˆéšæœºæ•°ç»„ 
+	//è¿è¡Œæ—¶æ³¨é‡Šæ‰åˆå§‹åŒ–äºŒ
 	srand((unsigned)time(0));
 	m=size1;
 	n=size2;
 	getRandomString1();
 	getRandomString2();
-	//³õÊ¼»¯Ò»½áÊø
+	//åˆå§‹åŒ–ä¸€ç»“æŸ
 
-	//³õÊ¼»¯¶ş£¬×Ô¶¨ÒåµÄĞòÁĞ 
-	//ÔËĞĞÊ±×¢ÊÍµô³õÊ¼»¯Ò»£¬²¢ÔÚÎÄ¼şa.txtºÍb.txtÖĞĞ´Èë´ıÆ¥ÅäĞòÁĞ
+	//åˆå§‹åŒ–äºŒï¼Œè‡ªå®šä¹‰çš„åºåˆ— 
+	//è¿è¡Œæ—¶æ³¨é‡Šæ‰åˆå§‹åŒ–ä¸€ï¼Œå¹¶åœ¨æ–‡ä»¶a.txtå’Œb.txtä¸­å†™å…¥å¾…åŒ¹é…åºåˆ—
 	/*fstream File;
     char c;  
-	//¶ÁÈ¡a
+	//è¯»å–a
     File.open("a.txt",ios::in);  
     while(!File.eof() )  
     {  
@@ -62,7 +62,7 @@ int main()
     }  
     File.close();  
 	a.pop_back();
-	//¶ÁÈ¡b
+	//è¯»å–b
 	File.open("b.txt",ios::in);  
     while(!File.eof() )  
     {  
@@ -72,13 +72,13 @@ int main()
     File.close();  
 	b.pop_back();
 
-	//¼ÆËãmºÍn
+	//è®¡ç®—må’Œn
 	m=a.size();
 	n=b.size();
 	*/
-	//³õÊ¼»¯¶ş½áÊø
+	//åˆå§‹åŒ–äºŒç»“æŸ
 
-	//Êä³öÔ­ĞòÁĞ
+	//è¾“å‡ºåŸåºåˆ—
 	printf("a:");
 	for(int y = 0; y < m; y++)
 		printf("%c",a[y]);
@@ -88,31 +88,31 @@ int main()
 	for(int y = 0; y < n; y++)
 		printf("%c",b[y]);
 
-	//¼ÆËãÔËĞĞÊ±¼ä
+	//è®¡ç®—è¿è¡Œæ—¶é—´
 	double start, finish;
 	int cost;
 
-	//º¯Êı2£¨ÒòÎªº¯Êı1ÔËĞĞÊ±¼äÌ«³¤ËùÒÔÏÈÔËĞĞº¯Êı2£©
+	//å‡½æ•°2ï¼ˆå› ä¸ºå‡½æ•°1è¿è¡Œæ—¶é—´å¤ªé•¿æ‰€ä»¥å…ˆè¿è¡Œå‡½æ•°2ï¼‰
 	start=clock();
 	cost=optCost2(0,0);
 	printf("\noptimal cost: %d\n",cost);
 	finish=clock();
-	printf( "º¯Êı2ÔËĞĞÊ±¼ä£º%f seconds\n",(finish - start) / CLOCKS_PER_SEC);
+	printf( "å‡½æ•°2è¿è¡Œæ—¶é—´ï¼š%f seconds\n",(finish - start) / CLOCKS_PER_SEC);
 
-	//º¯Êı1
+	//å‡½æ•°1
 	start=clock();
-	printf("\nº¯Êı1ÕıÔÚÔËĞĞ...");
+	printf("\nå‡½æ•°1æ­£åœ¨è¿è¡Œ...");
 	cost=optCost1(0,0);
 	printf("\noptimal cost: %d\n",cost);
 	finish=clock();
-	printf( "º¯Êı1ÔËĞĞÊ±¼ä£º%f seconds\n",(finish - start) / CLOCKS_PER_SEC);
+	printf( "å‡½æ•°1è¿è¡Œæ—¶é—´ï¼š%f seconds\n",(finish - start) / CLOCKS_PER_SEC);
 
-	printf("ÔËĞĞ½áÊø\n");
+	printf("è¿è¡Œç»“æŸ\n");
 	getchar();
 	return 0;
 }
 
-//º¯Êı1
+//å‡½æ•°1
 int optCost1(int i,int j)
 {
 	if(i==m)
@@ -131,10 +131,10 @@ int optCost1(int i,int j)
 	}
 }
 
-//º¯Êı2
+//å‡½æ•°2
 int optCost2(int i,int j)
 {
-	//¶¨ÒåÊı×éM
+	//å®šä¹‰æ•°ç»„M
 	position **M;
 	M=(position **)malloc(sizeof(position*)*(m+1));
 	for(int t=0;t<m+1;t++)
@@ -181,8 +181,8 @@ int optCost2(int i,int j)
 		}
 	}
 
-	//Êä³ö¶şÎ¬Êı×é
-	printf("\nMÊı×é£º\n");
+	//è¾“å‡ºäºŒç»´æ•°ç»„
+	printf("\nMæ•°ç»„ï¼š\n");
 		for(int x=0;x<m+1;x++)
 	{
 		for(int y=0;y<n+1;y++)
@@ -191,9 +191,9 @@ int optCost2(int i,int j)
 	}
 
 
-	//¿ªÊ¼»ØËİ
+	//å¼€å§‹å›æº¯
 	
-	//¶¨ÒåÒ»¸öÊı×éÀ´´æ´¢»ØËİÂ·Ïß
+	//å®šä¹‰ä¸€ä¸ªæ•°ç»„æ¥å­˜å‚¨å›æº¯è·¯çº¿
 	int l=max(m,n);
 	int **array;
 	array=(int **)malloc(sizeof(int*)*(l+1));
@@ -217,7 +217,7 @@ int optCost2(int i,int j)
 		f=temp.j;
 	}
 
-	printf("»ØËİÂ·Ïß£º\n");
+	printf("å›æº¯è·¯çº¿ï¼š\n");
 	for(int x=0;x<l+1 && array[x][0]!=-1;x++)
 	{
 		printf("(%d,%d)\t",array[x][0],array[x][1]);
@@ -225,8 +225,8 @@ int optCost2(int i,int j)
 
 
 
-	//Êä³ö×î¼ÑÆ¥Åä
-	//½«´ıÊä³öµÄÆ¥ÅäºÃµÄĞòÁĞ¶¨ÒåÎªa1,b1
+	//è¾“å‡ºæœ€ä½³åŒ¹é…
+	//å°†å¾…è¾“å‡ºçš„åŒ¹é…å¥½çš„åºåˆ—å®šä¹‰ä¸ºa1,b1
 	vector <char>a1;
 	vector <char>b1;
 	for(int e=0;e<m;e++)
@@ -247,15 +247,15 @@ int optCost2(int i,int j)
 			b1.insert(b1.begin()+x,gap);
 	}
 
-	//Êä³ö
-	printf("\n×î¼ÑÆ¥Åä£º\n");
+	//è¾“å‡º
+	printf("\næœ€ä½³åŒ¹é…ï¼š\n");
 	for(int y = 0; y < a1.size(); y++)
 		printf("%c",a1[y]);
 	printf("\n");
 	for(int y = 0; y < b1.size(); y++)
 		printf("%c",b1[y]);
 
-	return M[0][0].value;//·µ»Øcost
+	return M[0][0].value;//è¿”å›cost
 
 }
 int min(int a,int b,int c)
@@ -276,7 +276,7 @@ int min(int a,int b,int c)
 	}
 }
 
-//Ëæ»úµÃµ½µÄĞòÁĞa
+//éšæœºå¾—åˆ°çš„åºåˆ—a
 void getRandomString1()
 {
 	for(int i=0;i<m;i++)
@@ -302,7 +302,7 @@ void getRandomString1()
 	}
 }
 
-//Ëæ»úµÃµ½µÄĞòÁĞ2
+//éšæœºå¾—åˆ°çš„åºåˆ—2
 void getRandomString2()
 {
 	for(int i=0;i<n;i++)
